@@ -1,0 +1,8 @@
+
+<div>Current user: <%= @user&.email %></div>
+
+
+<div>All users: <%= User.all.map(&:email).join('  ') %></div>
+
+
+
