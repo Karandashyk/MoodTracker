@@ -1,5 +1,5 @@
 class MoodsController < ApplicationController
-  before_action :set_mood, only: [:show, :edit, :update, :destroy]
+  before_action :set_mood, only: %i[show edit update destroy]
 
   # GET /moods
   # GET /moods.json
@@ -9,8 +9,7 @@ class MoodsController < ApplicationController
 
   # GET /moods/1
   # GET /moods/1.json
-  def show
-  end
+  def show; end
 
   # GET /moods/new
   def new
@@ -18,13 +17,12 @@ class MoodsController < ApplicationController
   end
 
   # GET /moods/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /moods
   # POST /moods.json
   def create
-    @mood = Mood.new(mood_params.merge({ user_id: current_user.id }))
+    @mood = Mood.new(mood_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @mood.save
@@ -62,13 +60,14 @@ class MoodsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mood
-      @mood = Mood.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def mood_params
-      params.require(:mood).permit(:rate, :comment, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mood
+    @mood = Mood.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def mood_params
+    params.require(:mood).permit(:rate, :comment, :user_id)
+  end
 end
