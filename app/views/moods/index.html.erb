@@ -1,31 +1,32 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%#= notice %></p>-->
+<div class="form">
+  <h1>Moods</h1>
 
-<h1>Moods</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Rate</th>
-      <th>Comment</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @moods.each do |mood| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= mood.rate %></td>
-        <td><%= mood.comment %></td>
-        <td><%= mood.user_id %></td>
-        <td><%= link_to 'Show', mood %></td>
-        <td><%= link_to 'Edit', edit_mood_path(mood) %></td>
-        <td><%= link_to 'Destroy', mood, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Rate</th>
+        <th>Comment</th>
+<!--        <th>User</th>-->
+<!--        <th colspan="3"></th>-->
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @moods.each do |mood| %>
+        <tr>
+          <td><%= mood.rate %></td>
+          <td><%= mood.comment %></td>
+<!--          <td><%#= mood.user_id %></td>-->
+<!--          <td><%#= link_to 'Show', mood %></td>-->
+<!--          <td><%#= link_to 'Edit', edit_mood_path(mood) %></td>-->
+<!--          <td><%#= link_to 'Destroy', mood, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Mood', new_mood_path %>
+  <br>
+
+  <%= link_to 'New Mood', new_mood_path %>
+</div>

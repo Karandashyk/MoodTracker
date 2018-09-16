@@ -1,0 +1,24 @@
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-light p-4">
+      <h5 class="h4">Menu</h5>
+      <ul class="nav-menu list-group">
+        <a class="text-muted" href="/moods/new">Today's mood</a>
+        <a class="text-muted" href="/moods">Statistics</a>
+        <%- if @user.nil? %>
+          <a class="text-muted" href="/users/sign_in">Log in</a>
+        <%- else %>
+          <a class="text-muted" href="/users/sign_out">Log out</a>
+        <% end -%>
+
+      </ul>
+    </div>
+  </div>
+  <nav class="navbar navbar-light">
+    <span class="float-right user"> <%= @user&.email %> </span>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>

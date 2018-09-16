@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :rate %>
-    <%= form.number_field :rate, id: :mood_rate %>
+    <%= form.number_field :rate, id: :mood_rate, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :comment %>
-    <%= form.text_field :comment, id: :mood_comment %>
+    <%= form.text_field :comment, id: :mood_comment, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add mood", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "material";
+
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.quote {
+  margin-top: 10%;
+  color: #272b29;
+  i {
+    font-size: 4rem;
+    margin-left: 1rem;
+  }
+  p {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 4rem;
+  }
+}
+
+.form {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+a:hover {
+    background-color: inherit;
+}
+
+.user {
+  font-size: 1rem;
+}
+
+body {
+  color: #272b29 !important;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg") no-repeat;
+  background-size: cover;
+  &:before {
+    content:"";
+    display:block;
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:-1;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
